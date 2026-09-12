@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimoni – Jamulisa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9a84c;--gold-light:#e8d48b;--gold-dark:#9a7e2e;--cream:#fefcf9;--cream-alt:#faf6f0;--dark:#1a1a2e;--dark-soft:#2a2a3e;--text:#2d2d3d;--text-light:#6b7280;--white:#ffffff;--whatsapp:#25D366;--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Inter',-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--text);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,252,249,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--gold);letter-spacing:-.5px;text-decoration:none}
+.logo span{color:var(--dark)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.875rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--white)!important;padding:10px 24px;border-radius:50px;font-size:.8rem!important;text-transform:uppercase;letter-spacing:1px;font-weight:600;transition:all .3s}
+.nav-cta:hover{background:var(--gold-dark)!important;transform:translateY(-1px)}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--dark);cursor:pointer}
+
+.section{padding:120px 0 80px}
+.section-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section h1{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.1;margin-bottom:16px}
+.section h1 em{color:var(--gold);font-style:italic}
+.section>.container>p.sub{font-size:1.05rem;color:var(--text-light);max-width:600px;margin-bottom:48px}
+
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:var(--white);padding:32px;border-radius:20px;border:1px solid rgba(201,168,76,.08);position:relative}
+.testimonial-card .quote{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;line-height:1.6;color:var(--text);margin-bottom:20px}
+.testimonial-card .quote::before{content:'"';font-size:3rem;color:var(--gold);font-family:var(--font-serif);line-height:0;vertical-align:-8px;margin-right:4px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:600;font-size:.9rem;flex-shrink:0}
+.testimonial-author .name{font-weight:600;font-size:.9rem;color:var(--dark)}
+.testimonial-author .location{font-size:.8rem;color:var(--text-light)}
+.stars{color:var(--gold);font-size:.85rem;letter-spacing:2px;margin-top:4px}
+
+.cta-section{background:linear-gradient(135deg,var(--dark) 0%,var(--dark-soft) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(201,168,76,.06) 0%,transparent 50%);pointer-events:none}
+.cta-section .container{position:relative;z-index:1}
+.cta-section h2{color:var(--white);font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,3rem);margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-sans)}
+.btn-whatsapp{background:var(--whatsapp);color:var(--white)}
+.btn-whatsapp:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,.35)}
+.cta-phone{display:block;margin-top:24px;font-size:1.8rem;font-weight:700;color:var(--gold);text-decoration:none;font-family:var(--font-serif);transition:color .3s}
+.cta-phone:hover{color:var(--gold-light)}
+.btn-primary{background:var(--gold);color:var(--white)}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.35)}
+
+footer{background:var(--dark);padding:60px 0 40px;border-top:1px solid rgba(255,255,255,.06)}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h5{color:var(--gold);font-family:var(--font-serif);font-size:1.1rem;margin-bottom:16px}
+footer p,footer a{color:rgba(255,255,255,.5);font-size:.85rem;text-decoration:none;line-height:2}
+footer a:hover{color:var(--gold)}
+.footer-bottom{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:rgba(255,255,255,.3);font-size:.8rem}
+
+.floating-wa{position:fixed;bottom:24px;right:24px;z-index:1000;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;animation:pulse 2s infinite}
+.floating-wa:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+@keyframes pulse{0%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.25)}100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(201,168,76,.15)}
+  .nav-links.open{display:flex}
+  .mobile-toggle{display:block}
+  .testimonial-grid{grid-template-columns:1fr}
+  .section{padding:100px 0 60px}
+  footer .container{grid-template-columns:1fr;gap:24px}
+  .cta-phone{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">jamu<span>lisa</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/testimoni.html">Testimoni</a></li>
+      <li><a href="/#pricing">Harga</a></li>
+      <li><a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!" class="nav-cta" target="_blank">Order Sekarang</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-label">Testimoni</div>
+      <h1>Apa Kata <em>Mereka?</em></h1>
+      <p class="sub">Ratusan pelanggan puas hati dengan Jamu Lisa. Ini antara testimonial mereka!</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <!-- 1 -->
+      <div class="testimonial-card">
+        <div class="quote">Badan jadi sehat dan segar, berat badan saya turun. Puas hati!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SN</div>
+          <div>
+            <div class="name">Siti Nur</div>
+            <div class="location">Indonesia, 33 tahun</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="testimonial-card">
+        <div class="quote">Minum since 2020, sekarang rasa macam reverse aging. Nampak lebih muda!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AK</div>
+          <div>
+            <div class="name">Aisyah</div>
+            <div class="location">Regular Customer</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="testimonial-card">
+        <div class="quote">Dah repeat order berkali-kali. Kulit makin glowing, badan pun rasa ringan.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FN</div>
+          <div>
+            <div class="name">Farah</div>
+            <div class="location">Pelanggan Setia</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="testimonial-card">
+        <div class="quote">Badan rasa lebih ringan dan bertenaga. Puas hati dengan kualiti jamu ni!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RM</div>
+          <div>
+            <div class="name">Rina M.</div>
+            <div class="location">Kuala Lumpur</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="testimonial-card">
+        <div class="quote">Miss V dah tak gatal, period pun makin lancar. Terbaik!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ZS</div>
+          <div>
+            <div class="name">Zara S.</div>
+            <div class="location">Selangor</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="testimonial-card">
+        <div class="quote">Kulit makin cerah, berseri. Ramai kawan tanya guna produk apa. Rekomendasi!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">DH</div>
+          <div>
+            <div class="name">Diana H.</div>
+            <div class="location">Indonesia</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="testimonial-card">
+        <div class="quote">Bau badan hilang, badan rasa segar je每一次. Repeat order!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SL</div>
+          <div>
+            <div class="name">Siew Ling</div>
+            <div class="location">Penang</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 8 -->
+      <div class="testimonial-card">
+        <div class="quote">Sejak minum ni, tidur malam lena, bangun pagi tak letih. Badan ringan je.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">NF</div>
+          <div>
+            <div class="name">Nurul F.</div>
+            <div class="location">Johor</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 9 -->
+      <div class="testimonial-card">
+        <div class="quote">Rasa dia sedap, tak pahit macam jamu lain. Confirm jadi kegemaran!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AT</div>
+          <div>
+            <div class="name">Aina T.</div>
+            <div class="location">Sabah</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 10 -->
+      <div class="testimonial-card">
+        <div class="quote">Berat badan turun 5kg dalam sebulan. Alhamdulillah, sangat bersyukur.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">LM</div>
+          <div>
+            <div class="name">Liza M.</div>
+            <div class="location">Kedah</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 11 -->
+      <div class="testimonial-card">
+        <div class="quote">Lepas bersalin, badan jadi kendur. Minum ni rasa macam kembali bentuk asal.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FH</div>
+          <div>
+            <div class="name">Fatin H.</div>
+            <div class="location">Terengganu</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 12 -->
+      <div class="testimonial-card">
+        <div class="quote">Paras kulit makin cantik, jerawat pun makin kurang. Best gila!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SY</div>
+          <div>
+            <div class="name">Sarah Y.</div>
+            <div class="location">Sarawak</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 13 -->
+      <div class="testimonial-card">
+        <div class="quote">Period pain dah tak de. Dulu tiap bulan mesti makan panadol, sekarang tak langsung.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">HM</div>
+          <div>
+            <div class="name">Hana M.</div>
+            <div class="location">Melaka</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 14 -->
+      <div class="testimonial-card">
+        <div class="quote">Badan rasa detox. Perut buncit makin kempis. Love it!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AA</div>
+          <div>
+            <div class="name">Ayu A.</div>
+            <div class="location">Perak</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 15 -->
+      <div class="testimonial-card">
+        <div class="quote">Dulu malu nak pakai fitting baju, sekarang dah slim, badan pun glowing. Thanks Kak Lisa!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">MY</div>
+          <div>
+            <div class="name">Mira Y.</div>
+            <div class="location">N. Sembilan</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 16 -->
+      <div class="testimonial-card">
+        <div class="quote">Keputihan dah takde, rasa bersih dan selesa setiap hari.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">IZ</div>
+          <div>
+            <div class="name">Izzah Z.</div>
+            <div class="location">Pahang</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 17 -->
+      <div class="testimonial-card">
+        <div class="quote">Dah cuba banyak jamu tapi ni paling sedap. Tak pahit langsung. Repeat every month!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">KW</div>
+          <div>
+            <div class="name">Kathy W.</div>
+            <div class="location">Sarawak</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <!-- 18 -->
+      <div class="testimonial-card">
+        <div class="quote">Suami pun perasan perubahan. Badan makin slim, kulit makin cerah. Terima kasih Jamu Lisa!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">ND</div>
+          <div>
+            <div class="name">Nadia D.</div>
+            <div class="location">KL</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Nak Cuba <em>Sendiri?</em></h2>
+    <p>Order sekarang, kami pos hari yang sama untuk Semenanjung!</p>
+    <a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!" class="btn btn-whatsapp" target="_blank">💬 WhatsApp Lisa Sekarang</a>
+    <a href="tel:+60108666700" class="cta-phone">📞 010-866 6700</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="/" class="logo" style="font-size:1.4rem;margin-bottom:12px;display:inline-block">jamu<span>lisa</span></a>
+      <p>Jamu Kunyit Asam Sirih Manjakani — Resepi Asli Medan. Homemade, Tiada Pengawet.</p>
+      <p style="margin-top:8px">📍 Kota Warisan, Sepang</p>
+    </div>
+    <div>
+      <h5>Navigasi</h5>
+      <a href="/">Home</a><br>
+      <a href="/testimoni.html">Testimoni</a><br>
+      <a href="/#pricing">Harga</a><br>
+      <a href="/#faq">FAQ</a>
+    </div>
+    <div>
+      <h5>Hubungi</h5>
+      <a href="https://wa.me/60108666700" target="_blank">WhatsApp</a><br>
+      <a href="tel:+60108666700">📞 010-866 6700</a><br>
+      <p>COD: Kota Warisan, Dengkil, Cyberjaya</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Jamulisa. All rights reserved.
+  </div>
+</footer>
+
+<a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!" class="floating-wa" target="_blank" aria-label="WhatsApp">💬</a>
+
+</body>
+</html>
