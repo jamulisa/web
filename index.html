@@ -105,6 +105,27 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 
 /* Health Benefits */
 .khasiat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gallery-item{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:1;cursor:pointer;transition:all .4s}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-item .overlay{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:var(--white);font-size:.85rem;font-weight:500;opacity:0;transition:opacity .3s}
+.gallery-item:hover .overlay{opacity:1}
+
+/* Image Testimonials */
+.img-testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.img-testimonial-card{border-radius:20px;overflow:hidden;border:1px solid rgba(201,168,76,.12);background:var(--white);transition:all .4s}
+.img-testimonial-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.img-testimonial-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.img-testimonial-card .caption{padding:12px 16px 16px;text-align:center}
+.img-testimonial-card .caption .name{font-weight:600;font-size:.9rem;color:var(--dark)}
+.img-testimonial-card .caption .product{font-size:.8rem;color:var(--text-light);margin-top:2px}
+
+@media(max-width:768px){
+  .gallery-grid,.img-testimonial-grid{grid-template-columns:repeat(2,1fr)}
+}
 .khasiat-item{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.08)}
 .khasiat-item .icon{font-size:1.3rem}
 .khasiat-item span{font-size:.95rem;font-weight:500}
@@ -333,6 +354,101 @@ footer a:hover{color:var(--gold)}
     </div>
     <div style="text-align:center;margin-top:40px">
       <a href="/testimoni.html" class="btn btn-primary">Lihat Semua Testimoni →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label">Galeri</div>
+      <h2>Produk &amp; <em>Proses</em></h2>
+      <p>Dari bahan segar sampai ke botol — semua dibuat dengan tangan oleh Lisa</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/jamulisa2.jpg" alt="Botol Jamu Lisa" loading="lazy">
+        <div class="overlay">Jamu Kunyit Asam Sirih Manjakani</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/jamu banyak.jpeg" alt="Stok Jamu Lisa" loading="lazy">
+        <div class="overlay">Stok sedia untuk dihantar</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/masak-jamu.jpg" alt="Proses memasak Jamu" loading="lazy">
+        <div class="overlay">Dimasak dengan bahan segar</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/pasar-borong.jpg" alt="Bahan-bahan segar di pasar" loading="lazy">
+        <div class="overlay">Bahan segar dari pasar borong</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/pasar-borong-2.jpg" alt="Pasar borong bahan Jamu" loading="lazy">
+        <div class="overlay">Pemilihan bahan berkualiti</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/lisa.jpeg" alt="Lisa pengasas Jamulisa" loading="lazy">
+        <div class="overlay">Lisa — Pengasas Jamulisa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Image Testimonial Section -->
+<section class="section" id="testimonial-photos">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label">Bukti Nyata</div>
+      <h2>Testimonial <em>Pelanggan</em></h2>
+      <p>Gambar screenshot sebenar dari pelanggan yang dah repeat order!</p>
+    </div>
+    <div class="img-testimonial-grid">
+      <div class="img-testimonial-card">
+        <img src="images/iful-8.png" alt="Testimonial Jamu Lisa" loading="lazy">
+        <div class="caption">
+          <div class="name">Iful</div>
+          <div class="product">Repeat order berkali-kali</div>
+        </div>
+      </div>
+      <div class="img-testimonial-card">
+        <img src="images/iful-9.png" alt="Testimonial Jamu Lisa" loading="lazy">
+        <div class="caption">
+          <div class="name">Pelanggan Setia</div>
+          <div class="product">Order lagi & lagi</div>
+        </div>
+      </div>
+      <div class="img-testimonial-card">
+        <img src="images/iful-15.png" alt="Testimonial Jamu Lisa" loading="lazy">
+        <div class="caption">
+          <div class="name">Pelanggan Puas Hati</div>
+          <div class="product">Puas dengan hasilnya</div>
+        </div>
+      </div>
+      <div class="img-testimonial-card">
+        <img src="images/iful-23.png" alt="Testimonial Jamu Lisa" loading="lazy">
+        <div class="caption">
+          <div class="name">Repeat Customer</div>
+          <div class="product">Dah banyak kali order</div>
+        </div>
+      </div>
+      <div class="img-testimonial-card">
+        <img src="images/iful-25.png" alt="Testimonial Jamu Lisa" loading="lazy">
+        <div class="caption">
+          <div class="name">Pelanggan Puas Hati</div>
+          <div class="product">Testimoni #5</div>
+        </div>
+      </div>
+      <div class="img-testimonial-card">
+        <img src="images/10.png" alt="Testimonial Jamu Lisa" loading="lazy">
+        <div class="caption">
+          <div class="name">Pelanggan Gembira</div>
+          <div class="product">Glowing & kurus</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="/testimoni.html" class="btn btn-primary">Lihat Lagi Testimoni →</a>
     </div>
   </div>
 </section>
