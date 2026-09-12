@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamulisa – The Youth Elixir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#c9a84c;
+  --gold-light:#e8d48b;
+  --gold-dark:#9a7e2e;
+  --cream:#fefcf9;
+  --cream-alt:#faf6f0;
+  --dark:#1a1a2e;
+  --dark-soft:#2a2a3e;
+  --text:#2d2d3d;
+  --text-light:#6b7280;
+  --white:#ffffff;
+  --whatsapp:#25D366;
+  --font-serif:'Cormorant Garamond',Georgia,serif;
+  --font-sans:'Inter',-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--text);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,252,249,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15);transition:all .3s}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--gold);letter-spacing:-.5px;text-decoration:none}
+.logo span{color:var(--dark)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.875rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--white)!important;padding:10px 24px;border-radius:50px;font-size:.8rem!important;text-transform:uppercase;letter-spacing:1px;font-weight:600;transition:all .3s}
+.nav-cta:hover{background:var(--gold-dark)!important;transform:translateY(-1px)}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--dark);cursor:pointer}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:72px;background:linear-gradient(135deg,var(--cream) 0%,var(--cream-alt) 50%,#f0e9dd 100%)}
+.hero::before{content:'';position:absolute;top:-50%;right:-30%;width:800px;height:800px;background:radial-gradient(circle,rgba(201,168,76,.08) 0%,transparent 70%);pointer-events:none}
+.hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding-top:40px;padding-bottom:40px;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(201,168,76,.12);color:var(--gold-dark);font-size:.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:8px 16px;border-radius:50px;margin-bottom:24px}
+.hero h1{font-family:var(--font-serif);font-size:clamp(2.8rem,5.5vw,4.5rem);font-weight:700;line-height:1.05;color:var(--dark);margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero p{font-size:1.15rem;color:var(--text-light);max-width:500px;margin-bottom:36px;line-height:1.7}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-sans)}
+.btn-primary{background:var(--gold);color:var(--white)}
+.btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.35)}
+.btn-outline{background:transparent;color:var(--dark);border:2px solid rgba(201,168,76,.3)}
+.btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,.05)}
+.btn-whatsapp{background:var(--whatsapp);color:var(--white)}
+.btn-whatsapp:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,.35)}
+.hero-image{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-image-placeholder{width:100%;max-width:400px;aspect-ratio:3/4;background:linear-gradient(135deg,#f0e9dd,#e8d48b33);border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:2px dashed rgba(201,168,76,.3);color:var(--text-light);font-size:.9rem;text-align:center;padding:20px}
+.hero-image-placeholder span{font-size:3rem}
+.hero-stats{display:flex;gap:40px;margin-top:48px;padding-top:32px;border-top:1px solid rgba(201,168,76,.15)}
+.hero-stat{text-align:left}
+.hero-stat .num{font-family:var(--font-serif);font-size:1.8rem;font-weight:700;color:var(--gold)}
+.hero-stat .label{font-size:.8rem;color:var(--text-light);text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+/* Sections */
+.section{padding:100px 0}
+.section-alt{background:var(--cream-alt)}
+.section-dark{background:var(--dark);color:var(--white)}
+.section-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section h2{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.1;margin-bottom:16px}
+.section h2 em{color:var(--gold);font-style:italic}
+.section>.container>p{font-size:1.05rem;color:var(--text-light);max-width:600px;margin-bottom:48px}
+.section-dark .section-label{color:var(--gold-light)}
+.section-dark p{color:rgba(255,255,255,.7)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-image-placeholder{background:linear-gradient(135deg,#f0e9dd,#e8d48b33);border-radius:24px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;border:2px dashed rgba(201,168,76,.3);color:var(--text-light);text-align:center;padding:20px}
+.about-image-placeholder span{font-size:3rem;display:block;margin-bottom:8px}
+.about-content h3{font-family:var(--font-serif);font-size:1.8rem;font-weight:600;color:var(--gold);margin-bottom:16px}
+.about-content p{color:var(--text-light);margin-bottom:16px;line-height:1.8}
+.about-signature{font-family:var(--font-serif);font-style:italic;color:var(--gold);font-size:1.1rem;margin-top:24px}
+
+/* Benefits Grid */
+.benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.benefit-card{background:var(--white);padding:36px 28px;border-radius:20px;transition:all .4s;border:1px solid rgba(201,168,76,.1);position:relative;overflow:hidden}
+.benefit-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light));opacity:0;transition:opacity .4s}
+.benefit-card:hover::before{opacity:1}
+.benefit-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.06)}
+.benefit-icon{font-size:2.2rem;margin-bottom:20px;display:block}
+.benefit-card h4{font-family:var(--font-serif);font-size:1.3rem;font-weight:600;color:var(--dark);margin-bottom:8px}
+.benefit-card p{font-size:.9rem;color:var(--text-light);line-height:1.7}
+
+/* Testimonials */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.testimonial-card{background:var(--white);padding:32px;border-radius:20px;border:1px solid rgba(201,168,76,.08);position:relative}
+.testimonial-card .quote{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;line-height:1.6;color:var(--text);margin-bottom:20px}
+.testimonial-card .quote::before{content:'"';font-size:3rem;color:var(--gold);font-family:var(--font-serif);line-height:0;vertical-align:-8px;margin-right:4px}
+.testimonial-author{display:flex;align-items:center;gap:12px}
+.testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold-light),var(--gold));display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:600;font-size:.9rem}
+.testimonial-author .name{font-weight:600;font-size:.9rem;color:var(--dark)}
+.testimonial-author .location{font-size:.8rem;color:var(--text-light)}
+.stars{color:var(--gold);font-size:.85rem;letter-spacing:2px;margin-top:4px}
+
+/* Health Benefits */
+.khasiat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.khasiat-item{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+.khasiat-item .icon{font-size:1.3rem}
+.khasiat-item span{font-size:.95rem;font-weight:500}
+
+/* How to use */
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.how-card{text-align:center;padding:40px 24px;background:var(--white);border-radius:20px;border:1px solid rgba(201,168,76,.08)}
+.how-icon{width:64px;height:64px;border-radius:50%;background:rgba(201,168,76,.1);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.5rem}
+.how-card h4{font-family:var(--font-serif);font-size:1.2rem;margin-bottom:8px;color:var(--dark)}
+.how-card p{font-size:.9rem;color:var(--text-light)}
+
+/* Pricing */
+.pricing-card{max-width:360px;margin:0 auto;background:var(--white);border-radius:24px;padding:48px 40px;text-align:center;border:2px solid rgba(201,168,76,.2);position:relative}
+.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 20px;border-radius:50px}
+.pricing-icon{font-size:3rem;margin-bottom:16px}
+.price{font-family:var(--font-serif);font-size:3.5rem;font-weight:700;color:var(--dark);margin-bottom:4px}
+.price-currency{font-size:1.2rem;vertical-align:super}
+.price-sub{font-size:.9rem;color:var(--text-light);margin-bottom:24px}
+.pricing-features{list-style:none;margin-bottom:32px;text-align:left}
+.pricing-features li{padding:10px 0;border-bottom:1px solid rgba(201,168,76,.08);font-size:.9rem;color:var(--text-light);display:flex;align-items:center;gap:8px}
+.pricing-features li:last-child{border-bottom:none}
+.pricing-delivery{margin-top:16px;font-size:.85rem;color:var(--text-light)}
+
+/* FAQ */
+.faq-grid{max-width:700px;margin:0 auto}
+details{background:var(--white);border-radius:16px;margin-bottom:12px;overflow:hidden;border:1px solid rgba(201,168,76,.08);transition:all .3s}
+details[open]{box-shadow:0 4px 20px rgba(0,0,0,.04)}
+summary{padding:20px 24px;cursor:pointer;font-weight:600;font-size:1rem;color:var(--dark);display:flex;justify-content:space-between;align-items:center;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:'+';font-size:1.2rem;color:var(--gold);transition:transform .3s;font-weight:300}
+details[open] summary::after{content:'−';transform:rotate(180deg)}
+.faq-answer{padding:0 24px 20px;color:var(--text-light);font-size:.95rem;line-height:1.7}
+
+/* CTA Section */
+.cta-section{background:linear-gradient(135deg,var(--dark) 0%,var(--dark-soft) 100%);padding:100px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(201,168,76,.06) 0%,transparent 50%);pointer-events:none}
+.cta-section .container{position:relative;z-index:1}
+.cta-section h2{color:var(--white);font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,3rem);margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;font-size:1.05rem}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-phone{display:block;margin-top:24px;font-size:1.8rem;font-weight:700;color:var(--gold);text-decoration:none;font-family:var(--font-serif)}
+.cta-phone:hover{color:var(--gold-light)}
+
+/* Footer */
+footer{background:var(--dark);padding:60px 0 40px;border-top:1px solid rgba(255,255,255,.06)}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h5{color:var(--gold);font-family:var(--font-serif);font-size:1.1rem;margin-bottom:16px}
+footer p,footer a{color:rgba(255,255,255,.5);font-size:.85rem;text-decoration:none;line-height:2}
+footer a:hover{color:var(--gold)}
+.footer-bottom{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:rgba(255,255,255,.3);font-size:.8rem}
+
+/* Floating WhatsApp */
+.floating-wa{position:fixed;bottom:24px;right:24px;z-index:1000;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;animation:pulse 2s infinite}
+.floating-wa:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+@keyframes pulse{0%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.25)}100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}}
+
+/* Responsive */
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(201,168,76,.15)}
+  .nav-links.open{display:flex}
+  .mobile-toggle{display:block}
+  .hero .container{grid-template-columns:1fr;text-align:center;gap:40px}
+  .hero p{margin-left:auto;margin-right:auto}
+  .hero-actions{justify-content:center}
+  .hero-stats{justify-content:center}
+  .hero-image{order:-1}
+  .hero-image-placeholder{max-width:240px;margin:0 auto}
+  .about-grid{grid-template-columns:1fr;gap:32px}
+  .benefits-grid,.testimonials-grid,.how-grid{grid-template-columns:1fr}
+  .khasiat-grid{grid-template-columns:1fr}
+  .section{padding:60px 0}
+  footer .container{grid-template-columns:1fr;gap:24px}
+  .cta-phone{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">jamu<span>lisa</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Cerita Lisa</a></li>
+      <li><a href="#testimonials">Testimoni</a></li>
+      <li><a href="#benefits">Khasiat</a></li>
+      <li><a href="#pricing">Harga</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!" class="nav-cta" target="_blank">Order Sekarang</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div>
+      <div class="hero-badge">Homemade · Medan · Tiada Pengawet</div>
+      <h1>Kurus &amp; Glowing<br><em>Secara Semulajadi</em></h1>
+      <p>Jamu Kunyit Asam Sirih Manjakani — Resepi Asli Medan. Homemade, bahan segar, tanpa pengawet. Dah 15,000+ botol tersebar ke seluruh Malaysia!</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!" class="btn btn-primary" target="_blank">🌸 Order Sekarang</a>
+        <a href="#testimonials" class="btn btn-outline">Lihat Testimoni</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">15,000+</div>
+          <div class="label">Botol Terjual</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">3</div>
+          <div class="label">Negara</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">99%</div>
+          <div class="label">Puas Hati</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-placeholder">
+        <span>🌿</span>
+        <strong>Gambar Produk</strong>
+        <small>Letak image botol Jamu Lisa di sini</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-placeholder">
+        <div><span>👩‍🍳</span><strong>Gambar Lisa</strong><small>Letak photo Lisa / proses masak</small></div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">Cerita Lisa</div>
+        <h3>Dari Medan, untuk Wanita Malaysia</h3>
+        <p>Assalamualaikum! Saya Lisa, pengusaha Jamu dari Medan, kini menetap di Kota Warisan, Sepang. Resepi ni turun-temurun dari nenek saya. Setiap botol dimasak dengan <strong>bahan segar, tanpa pengawet, tanpa gula tambahan</strong> — insyaAllah original macam kat kampung.</p>
+        <p>Apa yang best? Rasa dia <strong>sedap, tak pahit</strong>. Confirm dah ramai pelanggan Melayu, Cina, India dan Indonesia <strong>repeat order</strong>. Dah 15,000+ botol tersebar ke seluruh Malaysia! ❤️</p>
+        <div class="about-signature">— Lisa, Pengasas Jamulisa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="benefits">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-label">Kenapa Jamu Lisa?</div>
+      <h2>Kenapa <em>15,000+ Wanita</em><br>Pilih Jamu Lisa?</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="benefit-icon">🌿</span>
+        <h4>Homemade &amp; Asli</h4>
+        <p>Resepi turun-temurun dari Medan. Bahan segar, dimasak sendiri oleh Lisa. Tiada pengawet, tiada perisa tiruan.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">✨</span>
+        <h4>Reverse Aging</h4>
+        <p>Kulit glowing, nampak lebih muda, badan bertenaga. Ramai pelanggan kata rasa macam <em>reverse aging</em> sejak minum Jamu Lisa.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🔥</span>
+        <h4>Bakar Lemak &amp; Kurus</h4>
+        <p>Secara semulajadi tanpa kesan sampingan. Bantu percepat metabolisme, buang toksin dan kurus dengan sihat.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🌸</span>
+        <h4>Wanita &amp; Miss V</h4>
+        <p>Hilangkan keputihan, gatal, bau badan. Mengetatkan miss V &amp; melancarkan kitaran haid. Baik untuk ibu lepas bersalin.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">🤰</span>
+        <h4>Ibu Lepas Bersalin</h4>
+        <p>Membantu pemulihan badan selepas bersalin. Kembali bertenaga dan sihat secara semulajadi.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="benefit-icon">⭐</span>
+        <h4>Rasa Sedap!</h4>
+        <p>Rasa sedap (tak pahit!) — confirmed pelanggan Melayu, India, Cina &amp; Indonesia semua suka.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-label">Testimoni</div>
+      <h2>Apa Kata <em>Mereka?</em></h2>
+      <p>Ratusan pelanggan puas hati dengan Jamu Lisa</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote">Badan jadi sehat dan segar, berat badan saya turun. Puas hati!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SN</div>
+          <div>
+            <div class="name">Siti Nur</div>
+            <div class="location">Indonesia, 33 tahun</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote">Minum since 2020, sekarang rasa macam reverse aging. Nampak lebih muda!</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AK</div>
+          <div>
+            <div class="name">Aisyah</div>
+            <div class="location">Regular Customer</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote">Dah repeat order berkali-kali. Kulit makin glowing, badan pun rasa ringan.</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">FN</div>
+          <div>
+            <div class="name">Farah</div>
+            <div class="location">Pelanggan Setia</div>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label">Khasiat</div>
+      <h2>Khasiat <em>Jamu Kunyit Asam</em><br>Sirih Manjakani</h2>
+    </div>
+    <div class="khasiat-grid">
+      <div class="khasiat-item"><span class="icon">🔥</span><span>Membakar lemak &amp; menurunkan berat badan</span></div>
+      <div class="khasiat-item"><span class="icon">✨</span><span>Mencantikkan &amp; mencerahkan kulit</span></div>
+      <div class="khasiat-item"><span class="icon">🌸</span><span>Hilangkan keputihan, gatal &amp; mengetatkan miss V</span></div>
+      <div class="khasiat-item"><span class="icon">🌙</span><span>Melancarkan kitaran haid</span></div>
+      <div class="khasiat-item"><span class="icon">⏳</span><span>Anti penuaan &amp; buang toksin</span></div>
+      <div class="khasiat-item"><span class="icon">🌿</span><span>Hilangkan bau badan</span></div>
+      <div class="khasiat-item"><span class="icon">⚡</span><span>Mencergaskan badan &amp; tingkatkan antibodi</span></div>
+      <div class="khasiat-item"><span class="icon">🤱</span><span>Baik untuk ibu lepas melahirkan</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="how">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:56px">
+      <div class="section-label">Cara Minum</div>
+      <h2>Cara Minum &amp; <em>Simpan</em></h2>
+    </div>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-icon">☕</div>
+        <h4>Cara Minum</h4>
+        <p>1 gelas (100ml) waktu pagi sebelum sarapan</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">❄️</div>
+        <h4>Simpan Peti Bawah</h4>
+        <p>Tahan 1 bulan dalam peti sejuk</p>
+      </div>
+      <div class="how-card">
+        <div class="how-icon">🧊</div>
+        <h4>Simpan Freezer</h4>
+        <p>Tahan setahun dalam freezer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label">Harga</div>
+      <h2>Pilihan <em>Anda</em></h2>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-badge">Best Seller</div>
+      <div class="pricing-icon">🌿</div>
+      <div class="price"><span class="price-currency">RM</span>15</div>
+      <div class="price-sub">/ botol (500ml) — Tahan 3-5 hari</div>
+      <ul class="pricing-features">
+        <li>✓ 100% Homemade</li>
+        <li>✓ Tiada Pengawet</li>
+        <li>✓ Bahan Segar</li>
+        <li>✓ Resepi Asli Medan</li>
+        <li>✓ Rasa Sedap, Tak Pahit</li>
+      </ul>
+      <a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%20-%201%20botol%20RM15" class="btn btn-primary" target="_blank" style="width:100%;justify-content:center">📲 Order Sekarang</a>
+      <div class="pricing-delivery">
+        <strong>COD:</strong> Kota Warisan, Dengkil, Cyberjaya<br>
+        <strong>Pos:</strong> Semenanjung, Sabah &amp; Sarawak<br>
+        <strong>Lokasi Ambil:</strong> Monet Garden, Bandar Sunsuria, Sepang
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="section-label">FAQ</div>
+      <h2>Soalan <em>Lazim</em></h2>
+    </div>
+    <div class="faq-grid">
+      <details>
+        <summary>Berapa harga Jamu Lisa?</summary>
+        <div class="faq-answer">RM15/botol (500ml). Tahan 3-5 hari bergantung pada kekerapan minum. Untuk 2 botol RM25, lebih jimat!</div>
+      </details>
+      <details>
+        <summary>Ada efek sampingan tak?</summary>
+        <div class="faq-answer">Tiada. Jamu Lisa dibuat dari bahan semulajadi — Kunyit, Asam, Sirih, Manjakani. Tiada bahan kimia atau pengawet.</div>
+      </details>
+      <details>
+        <summary>Cara minum macam mana?</summary>
+        <div class="faq-answer">Minum 1 gelas (100ml) waktu pagi sebelum sarapan. Boleh juga minum petang. Simpan dalam peti sejuk.</div>
+      </details>
+      <details>
+        <summary>Boleh pos ke Sabah/Sarawak?</summary>
+        <div class="faq-answer">Ya! Kami pos ke seluruh Malaysia — Semenanjung, Sabah &amp; Sarawak.</div>
+      </details>
+      <details>
+        <summary>Bila nampak hasil?</summary>
+        <div class="faq-answer">Kebanyakan pelanggan mula nampak perubahan dalam 1-2 minggu. Untuk hasil optimum, amalkan secara konsisten.</div>
+      </details>
+      <details>
+        <summary>Apa beza Kunyit Asam vs Beras Kencur?</summary>
+        <div class="faq-answer"><strong>Kunyit Asam Sirih Manjakani</strong> — kurus, glowing, awet muda. <strong>Beras Kencur</strong> — minuman tenaga, sesuai lelaki &amp; perempuan, legakan selsema/angin.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="section-label" style="color:var(--gold-light)">Sedia untuk Berubah?</div>
+    <h2>Sedia untuk <em>Kurus &amp; Glowing?</em></h2>
+    <p>Order sekarang, kami pos hari yang sama untuk Semenanjung!</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!" class="btn btn-whatsapp" target="_blank">💬 WhatsApp Lisa Sekarang</a>
+    </div>
+    <a href="tel:+60108666700" class="cta-phone">📞 010-866 6700</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="/" class="logo" style="font-size:1.4rem;margin-bottom:12px;display:inline-block">jamu<span>lisa</span></a>
+      <p>Jamu Kunyit Asam Sirih Manjakani — Resepi Asli Medan. Homemade, Tiada Pengawet.</p>
+      <p style="margin-top:8px">📍 Kota Warisan, Sepang</p>
+    </div>
+    <div>
+      <h5>Navigasi</h5>
+      <a href="#about">Cerita Lisa</a><br>
+      <a href="#testimonials">Testimoni</a><br>
+      <a href="#benefits">Khasiat</a><br>
+      <a href="#pricing">Harga</a><br>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div>
+      <h5>Hubungi</h5>
+      <a href="https://wa.me/60108666700" target="_blank">WhatsApp</a><br>
+      <a href="tel:+60108666700">📞 010-866 6700</a><br>
+      <p>COD: Kota Warisan, Dengkil, Cyberjaya</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2026 Jamulisa. All rights reserved.
+  </div>
+</footer>
+
+<a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!" class="floating-wa" target="_blank" aria-label="WhatsApp">💬</a>
+
+</body>
+</html>
