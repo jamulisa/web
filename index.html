@@ -107,8 +107,8 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 .khasiat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 
 /* Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.gallery-item{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:1;cursor:pointer;transition:all .4s;max-width:220px;margin:0 auto}
+.gallery-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.gallery-item{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:1;cursor:pointer;transition:all .4s}
 .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
 .gallery-item:hover img{transform:scale(1.05)}
 .gallery-item .overlay{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:var(--white);font-size:.85rem;font-weight:500;opacity:0;transition:opacity .3s}
@@ -124,7 +124,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 .img-testimonial-card .caption .product{font-size:.8rem;color:var(--text-light);margin-top:2px}
 
 @media(max-width:768px){
-  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
 }
 .khasiat-item{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.08)}
 .khasiat-item .icon{font-size:1.3rem}
