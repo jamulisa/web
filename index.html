@@ -117,7 +117,9 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
 .how-card p{font-size:.9rem;color:var(--text-light)}
 
 /* Pricing */
-.pricing-card{max-width:360px;margin:0 auto;background:var(--white);border-radius:24px;padding:48px 40px;text-align:center;border:2px solid rgba(201,168,76,.2);position:relative}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:800px;margin:0 auto}
+@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
+.pricing-card{background:var(--white);border-radius:24px;padding:48px 40px;text-align:center;border:2px solid rgba(201,168,76,.2);position:relative}
 .pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--white);font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 20px;border-radius:50px}
 .pricing-icon{font-size:3rem;margin-bottom:16px}
 .price{font-family:var(--font-serif);font-size:3.5rem;font-weight:700;color:var(--dark);margin-bottom:4px}
@@ -385,7 +387,8 @@ footer a:hover{color:var(--gold)}
       <div class="section-label">Harga</div>
       <h2>Pilihan <em>Anda</em></h2>
     </div>
-    <div class="pricing-card">
+    <div class="pricing-grid">
+      <div class="pricing-card">
       <div class="pricing-badge">Best Seller</div>
       <div class="pricing-icon">🌿</div>
       <div class="price"><span class="price-currency">RM</span>15</div>
@@ -397,12 +400,31 @@ footer a:hover{color:var(--gold)}
         <li>✓ Resepi Asli Indonesia</li>
         <li>✓ Rasa Sedap, Tak Pahit</li>
       </ul>
-      <a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%20-%201%20botol%20RM15" class="btn btn-primary" target="_blank" style="width:100%;justify-content:center">📲 Order Sekarang</a>
+      <a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%20-%201%20botol%20RM15" class="btn btn-primary" target="_blank" style="width:100%;justify-content:center">📲 Order Kunyit Asam</a>
       <div class="pricing-delivery">
         <strong>COD:</strong> Kota Warisan, Dengkil, Cyberjaya<br>
         <strong>Pos:</strong> Semenanjung, Sabah &amp; Sarawak<br>
         <strong>Lokasi Ambil:</strong> Monet Garden, Bandar Sunsuria, Sepang
       </div>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-icon">🍚</div>
+      <div class="price"><span class="price-currency">RM</span>15</div>
+      <div class="price-sub">/ botol (500ml)</div>
+      <ul class="pricing-features">
+        <li>✓ 100% Homemade</li>
+        <li>✓ Tiada Pengawet</li>
+        <li>✓ Bahan Segar</li>
+        <li>✓ Resepi Asli Indonesia</li>
+        <li>✓ Minuman Tenaga Semulajadi</li>
+      </ul>
+      <a href="https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Beras%20Kencur%20-%201%20botol%20RM15" class="btn btn-primary" target="_blank" style="width:100%;justify-content:center">📲 Order Beras Kencur</a>
+      <div class="pricing-delivery">
+        <strong>COD:</strong> Kota Warisan, Dengkil, Cyberjaya<br>
+        <strong>Pos:</strong> Semenanjung, Sabah &amp; Sarawak<br>
+        <strong>Lokasi Ambil:</strong> Monet Garden, Bandar Sunsuria, Sepang
+      </div>
+    </div>
     </div>
   </div>
 </section>
