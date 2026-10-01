@@ -1,0 +1,47 @@
+# Jamulisa - static site (repo: jamulisa/web, branch gh-pages)
+# Deployed to the cPanel docroot at ftp.elitepremier.com.my
+#
+# 2026-10-01: WordPress decommissioned. A full backup of the removed install
+# (files, uploads, wp-config, page content, .htaccess) is kept on the deploy
+# host at ~/jamulisa-wp-backup/. The WordPress database was NOT dropped by
+# this change - do that from cPanel separately.
+
+# Only index.html is a valid directory index now that index.php is gone.
+DirectoryIndex index.html
+
+# Stop exposing the image/asset directories as browsable listings.
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# --- Legacy WordPress permalinks -> static equivalents (301, permanent) ---
+RewriteRule ^testimoni/?$      /testimoni.html      [R=301,L]
+RewriteRule ^cara/?$           /index.html#how      [R=301,L,NE]
+RewriteRule ^stokis-ejen/?$    /                    [R=301,L]
+RewriteRule ^privacy-policy/?$ /                    [R=301,L]
+
+# Legacy WordPress sitemap / feeds -> the static sitemap
+RewriteRule ^wp-sitemap.*\.xml$ /sitemap.xml        [R=301,L]
+RewriteRule ^feed/?$            /sitemap.xml        [R=301,L]
+
+# Canonicalise /index.html -> /
+RewriteCond %{THE_REQUEST} \s/index\.html[\s?] [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Any surviving WordPress path is gone for good (410, not 404 - do not retry)
+RewriteRule ^wp-.*$ - [G,L]
+RewriteRule ^xmlrpc\.php$ - [G,L]
+RewriteRule ^readme\.html$ - [G,L]
+RewriteRule ^license\.txt$ - [G,L]
+</IfModule>
+
+ErrorDocument 404 /index.html
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

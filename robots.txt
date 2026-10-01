@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Jamulisa static site. WordPress paths are retired (410).
+Sitemap: https://jamulisa.com/sitemap.xml
