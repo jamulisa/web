@@ -30,6 +30,11 @@ RewriteEngine On
 RewriteBase /
 
 
+# --- Canonical legal URL: serve the page at /terms-of-service (no .html) ---
+# Internal rewrite (no R flag) so the URL reviewers are given is the one that
+# answers 200, not a 301 hop. terms-of-service.html carries a matching canonical.
+RewriteRule ^terms-of-service/?$ /terms-of-service.html [L]
+
 # --- Legacy WordPress permalinks -> static equivalents (301, permanent) ---
 RewriteRule ^testimoni/?$      /testimoni.html      [R=301,L]
 RewriteRule ^cara/?$           /index.html#how      [R=301,L,NE]
