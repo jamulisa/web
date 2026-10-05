@@ -14,21 +14,26 @@ Options -Indexes
 
 
 # --- Attribution short links: social channel -> WhatsApp, with a source tag ---
-# Put one of these short URLs in a post or bio instead of the raw phone number;
-# the pre-filled message tells Lisa which channel the customer came from.
-# mod_alias (Redirect), not mod_rewrite: RewriteRule parses '%2' in the
-# substitution as a backreference and silently eats the encoding (%20 -> 0).
-<IfModule mod_alias.c>
-Redirect 302 /fb https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Facebook%29
-Redirect 302 /ig https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Instagram%29
-Redirect 302 /th https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Threads%29
-Redirect 302 /status https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20WhatsApp%20Status%29
-</IfModule>
+# Definitions live in the mod_rewrite block below: each short URL goes through
+# go.php, which logs the click and then 302s to wa.me with the source tag.
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 
+# --- Attribution short links: social channel -> go.php -> WhatsApp (tagged) ---
+# The hit goes through go.php so the click is counted BEFORE the 302 to wa.me,
+# and the pre-filled message names the channel, so the enquiry itself carries
+# the source. Do NOT convert these back to mod_alias Redirect: that bypasses
+# go.php and the click is never logged. Short links belong in each profile's
+# BIO (Threads/IG ban URLs in captions); Facebook captions can carry /fb.
+RewriteRule ^fb/?$      /go.php?c=fb     [L]
+RewriteRule ^ig/?$      /go.php?c=ig     [L]
+RewriteRule ^th/?$      /go.php?c=th     [L]
+RewriteRule ^status/?$  /go.php?c=status [L]
+RewriteRule ^tt/?$      /go.php?c=tt     [L]
+RewriteRule ^yt/?$      /go.php?c=yt     [L]
+RewriteRule ^gbp/?$     /go.php?c=gbp    [L]
 
 # --- Canonical legal URLs: serve at /terms-of-service and /privacy-policy ---
 # Internal rewrite (no R flag) so the URL reviewers/platforms are given is the
