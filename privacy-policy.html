@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dasar Privasi – Jamulisa | Jamu Tradisional Homemade</title>
+<meta name="description" content="Dasar Privasi Jamulisa — data peribadi yang kami kumpul, tujuan penggunaannya, pihak yang kami kongsi, dan hak anda di bawah Akta Perlindungan Data Peribadi 2010.">
+<link rel="canonical" href="https://www.jamulisa.com/privacy-policy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--gold:#c9a84c;--gold-light:#e8d48b;--gold-dark:#9a7e2e;--cream:#fefcf9;--cream-alt:#faf6f0;--dark:#1a1a2e;--dark-soft:#2a2a3e;--text:#2d2d3d;--text-light:#6b7280;--white:#ffffff;--whatsapp:#25D366;--font-serif:'Cormorant Garamond',Georgia,serif;--font-sans:'Inter',-apple-system,sans-serif}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-sans);color:var(--text);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(254,252,249,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:var(--font-serif);font-size:1.6rem;font-weight:700;color:var(--gold);letter-spacing:-.5px;text-decoration:none}
+.logo span{color:var(--dark)}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.875rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--white)!important;padding:10px 24px;border-radius:50px;font-size:.8rem!important;text-transform:uppercase;letter-spacing:1px;font-weight:600;transition:all .3s}
+.nav-cta:hover{background:var(--gold-dark)!important;transform:translateY(-1px)}
+.mobile-toggle{display:none;background:none;border:none;font-size:1.5rem;color:var(--dark);cursor:pointer}
+
+.section{padding:120px 0 80px}
+.section-label{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.section h1{font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;line-height:1.1;margin-bottom:16px}
+.section h1 em{color:var(--gold);font-style:italic}
+.updated{font-size:.85rem;color:var(--text-light)}
+
+.legal{max-width:820px}
+.legal h2{font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:var(--dark);margin:44px 0 12px;padding-top:24px;border-top:1px solid rgba(201,168,76,.18)}
+.legal h2:first-of-type{margin-top:0;padding-top:0;border-top:none}
+.legal h3{font-size:1rem;font-weight:600;color:var(--dark);margin:24px 0 6px}
+.legal p{margin-bottom:14px}
+.legal ul{margin:0 0 16px 22px}
+.legal li{margin-bottom:8px}
+.legal a{color:var(--gold-dark)}
+.legal strong{color:var(--dark)}
+.note{background:var(--cream-alt);border-left:3px solid var(--gold);padding:18px 20px;border-radius:0 12px 12px 0;margin:20px 0;font-size:.92rem}
+.note p:last-child{margin-bottom:0}
+table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:.92rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(201,168,76,.2);vertical-align:top}
+th{font-weight:600;color:var(--dark);background:var(--cream-alt)}
+
+.cta-section{background:linear-gradient(135deg,var(--dark) 0%,var(--dark-soft) 100%);padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(201,168,76,.06) 0%,transparent 50%);pointer-events:none}
+.cta-section .container{position:relative;z-index:1}
+.cta-section h2{color:var(--white);font-family:var(--font-serif);font-size:clamp(2rem,3.5vw,3rem);margin-bottom:16px}
+.cta-section p{color:rgba(255,255,255,.6);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 36px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .3s;cursor:pointer;border:none;font-family:var(--font-sans)}
+.btn-whatsapp{background:var(--whatsapp);color:var(--white)}
+.btn-whatsapp:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 30px rgba(37,211,102,.35)}
+.cta-phone{display:block;margin-top:24px;font-size:1.8rem;font-weight:700;color:var(--gold);text-decoration:none;font-family:var(--font-serif);transition:color .3s}
+.cta-phone:hover{color:var(--gold-light)}
+
+footer{background:var(--dark);padding:60px 0 40px;border-top:1px solid rgba(255,255,255,.06)}
+footer .container{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h5{color:var(--gold);font-family:var(--font-serif);font-size:1.1rem;margin-bottom:16px}
+footer p,footer a{color:rgba(255,255,255,.5);font-size:.85rem;text-decoration:none;line-height:2}
+footer a:hover{color:var(--gold)}
+.footer-bottom{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);text-align:center;color:rgba(255,255,255,.3);font-size:.8rem}
+
+.floating-wa{position:fixed;bottom:24px;right:24px;z-index:1000;width:60px;height:60px;border-radius:50%;background:var(--whatsapp);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:1.8rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:all .3s;animation:pulse 2s infinite}
+.floating-wa:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,.5)}
+@keyframes pulse{0%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.25)}100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}}
+
+@media(max-width:768px){
+  .nav-links{display:none;position:fixed;top:72px;left:0;right:0;background:var(--cream);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(201,168,76,.15)}
+  .nav-links.open{display:flex}
+  .mobile-toggle{display:block}
+  .section{padding:100px 0 60px}
+  footer .container{grid-template-columns:1fr;gap:24px}
+  .cta-phone{font-size:1.4rem}
+  .legal h2{font-size:1.3rem}
+  th,td{padding:8px 6px;font-size:.85rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="logo">jamu<span>lisa</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/testimoni.html">Testimoni</a></li>
+      <li><a href="/#pricing">Harga</a></li>
+      <li><a href="https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!%20%28dari%20laman%20privasi%29" class="nav-cta" target="_blank">Order Sekarang</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">&#9776;</button>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="legal">
+      <div class="section-label">Privasi</div>
+      <h1>Dasar <em>Privasi</em></h1>
+      <p class="updated">Kemas kini terakhir: 5 Oktober 2026</p>
+
+      <p style="margin-top:24px">Dasar ini menerangkan bagaimana <strong>Jamulisa</strong> mengumpul, menggunakan dan melindungi data peribadi anda. Ia terpakai apabila anda melawat <strong>jamulisa.com</strong>, menghubungi kami, atau membuat pesanan dengan kami. Kami mematuhi <strong>Akta Perlindungan Data Peribadi 2010 (PDPA)</strong> Malaysia.</p>
+
+      <h2>1. Siapa yang Bertanggungjawab atas Data Anda</h2>
+      <p>Jamulisa ialah perniagaan kecil yang mengeluarkan minuman herba tradisional secara homemade, diuruskan oleh Lisa dan berpangkalan di Kota Warisan, Sepang, Selangor, Malaysia. Kami ialah pengawal data bagi maklumat peribadi yang anda berikan kepada kami.</p>
+      <ul>
+        <li>WhatsApp / telefon: <a href="tel:+60108666700">010-866 6700</a></li>
+        <li>Laman web: <a href="https://www.jamulisa.com">www.jamulisa.com</a></li>
+      </ul>
+
+      <h2>2. Data yang Kami Kumpul</h2>
+      <table>
+        <tr><th>Jenis</th><th>Apa yang kami minta</th><th>Bila</th></tr>
+        <tr><td>Maklumat pesanan</td><td>Nama penuh, nombor telefon, alamat penghantaran, jenis dan bilangan produk</td><td>Apabila anda membuat pesanan</td></tr>
+        <tr><td>Maklumat pembayaran</td><td>Kaedah pembayaran dan rujukan transaksi (contoh: gambar resit). <strong>Kami tidak menyimpan nombor kad bank atau PIN anda.</strong></td><td>Apabila anda membayar</td></tr>
+        <tr><td>Komunikasi</td><td>Kandungan perbualan WhatsApp atau panggilan berkaitan pesanan, pertanyaan dan aduan</td><td>Apabila anda menghubungi kami</td></tr>
+        <tr><td>Rekod pelanggan</td><td>Sejarah pesanan untuk tujuan ulangan, waranti dan perakaunan</td><td>Sepanjang urusan perniagaan kami dengan anda</td></tr>
+        <tr><td>Data teknikal laman</td><td>Statistik lawatan yang tidak mengenal pasti anda secara peribadi (lihat seksyen 5)</td><td>Apabila anda membuka laman ini</td></tr>
+      </table>
+      <p>Kami tidak meminta nombor kad pengenalan, maklumat kesihatan, atau maklumat sensitif lain. Sila <strong>jangan</strong> hantar maklumat tersebut kepada kami melalui WhatsApp.</p>
+
+      <h2>3. Tujuan Kami Menggunakan Data Anda</h2>
+      <ul>
+        <li>Memproses dan menghantar pesanan anda.</li>
+        <li>Menghubungi anda mengenai pesanan, penghantaran, atau masalah dengan barang yang dihantar.</li>
+        <li>Melayan pertanyaan, aduan dan permintaan pemulangan.</li>
+        <li>Menyimpan rekod perniagaan yang dikehendaki oleh undang-undang, contohnya rekod jualan dan percukaian.</li>
+        <li>Menghantar maklumat promosi — <strong>hanya jika anda bersetuju</strong>. Anda boleh berhenti pada bila-bila masa dengan memberitahu kami.</li>
+      </ul>
+      <p>Kami tidak menggunakan data anda untuk membuat keputusan automatik atau profil pemasaran yang mengenal pasti anda secara peribadi.</p>
+
+      <h2>4. Asas Kami Memproses Data</h2>
+      <p>Di bawah PDPA, kami memproses data peribadi anda atas dasar:</p>
+      <ul>
+        <li><strong>Untuk melaksanakan urusan jual beli dengan anda</strong> — ia tidak boleh dielakkan jika anda mahu kami menghantar pesanan.</li>
+        <li><strong>Persetujuan anda</strong> — bagi promosi dan komunikasi pemasaran.</li>
+        <li><strong>Kewajipan undang-undang</strong> — bagi rekod cukai dan perakaunan.</li>
+        <li><strong>Kepentingan sah kami</strong> — untuk menjaga rekod pesanan, mencegah penipuan, dan menyelesaikan aduan.</li>
+      </ul>
+
+      <h2>5. Kuki dan Statistik Laman</h2>
+      <p>Laman ini menggunakan <strong>Statcounter</strong>, satu perkhidmatan statistik pelawat, untuk mengira bilangan lawatan dan melihat halaman mana yang paling banyak dibaca. Statcounter boleh menggunakan kuki dan mengumpul maklumat teknikal seperti alamat IP, jenis peranti, pelayar dan halaman rujukan.</p>
+      <p>Data ini digunakan untuk tujuan statistik sahaja dan dalam bentuk agregat — kami tidak menggunakannya untuk mengenal pasti anda sebagai individu. Statcounter ialah perkhidmatan pihak ketiga dan data yang dikumpulnya dipegang oleh mereka mengikut dasar privasi mereka sendiri, termasuk kemungkinan diproses di luar Malaysia.</p>
+      <p>Laman ini <strong>tidak</strong> menggunakan kuki pengiklanan atau kuki untuk menjejak anda di laman web lain. Anda boleh menyekat atau memadam kuki melalui tetapan pelayar anda; laman ini masih boleh dibaca sepenuhnya tanpa kuki.</p>
+
+      <h2>6. Siapa yang Kami Kongsi</h2>
+      <p>Kami <strong>tidak menjual, menyewakan atau memperdagangkan</strong> data peribadi anda. Kami hanya berkongsi setakat yang perlu:</p>
+      <ul>
+        <li><strong>Syarikat kurier</strong> — nama, telefon dan alamat penghantaran, supaya barang anda sampai.</li>
+        <li><strong>Penyedia pembayaran</strong> (contoh: bank atau e-dompet anda sendiri) — pemindahan dibuat melalui sistem mereka, bukan melalui kami.</li>
+        <li><strong>Perkhidmatan platform</strong> — WhatsApp/Meta, Instagram, Threads, Facebook atau TikTok, apabila anda berhubung dengan kami melalui platform tersebut. Platform itu memproses data anda mengikut dasar mereka sendiri.</li>
+        <li><strong>Penyedia statistik laman</strong> — Statcounter, seperti dijelaskan di seksyen 5.</li>
+        <li><strong>Pihak berkuasa</strong> — jika dikehendaki oleh undang-undang atau perintah mahkamah.</li>
+      </ul>
+
+      <h2>7. Berapa Lama Kami Simpan</h2>
+      <p>Kami menyimpan data pesanan hanya selagi ia diperlukan untuk tujuan di seksyen 3: untuk mengenal pasti pesanan anda, menangani aduan atau pemulangan, dan memenuhi keperluan rekod cukai dan perakaunan yang diwajibkan undang-undang Malaysia.</p>
+      <p>Apabila ia tidak lagi diperlukan, kami akan memadamkan atau memusnahkannya dengan cara yang selamat. Anda juga boleh meminta kami memadamkan maklumat anda lebih awal — lihat seksyen 9.</p>
+
+      <h2>8. Keselamatan</h2>
+      <p>Kami menyimpan maklumat pesanan anda dalam peranti dan akaun yang dikawal oleh kami dan dilindungi dengan kata laluan. Akses dihadkan kepada kami sendiri sahaja. Kami tidak menyimpan maklumat kad bank, PIN atau kata laluan anda.</p>
+      <p>Perlu diingat: tiada cara penghantaran maklumat melalui internet yang 100% selamat. Sila berhati-hati apabila berkongsi maklumat dalam mana-mana aplikasi pesanan. Jika berlaku pelanggaran data yang menjejaskan anda, kami akan memaklumkan kepada anda dan kepada Pesuruhjaya Perlindungan Data Peribadi sebagaimana yang dikehendaki undang-undang.</p>
+
+      <h2>9. Hak Anda</h2>
+      <p>Di bawah PDPA, anda berhak untuk:</p>
+      <ul>
+        <li><strong>Mendapat akses</strong> kepada data peribadi anda yang kami pegang, dan mengetahui bagaimana ia digunakan.</li>
+        <li><strong>Membetulkan</strong> data yang tidak tepat, tidak lengkap atau lapuk.</li>
+        <li><strong>Menarik balik persetujuan</strong> anda untuk penggunaan tertentu, contohnya promosi, pada bila-bila masa.</li>
+        <li><strong>Menghadkan</strong> cara kami memproses data anda, atau meminta kami berhenti menggunakannya untuk tujuan tertentu.</li>
+        <li><strong>Menghubungi Pesuruhjaya Perlindungan Data Peribadi</strong> jika anda tidak berpuas hati dengan cara kami mengendalikan data anda.</li>
+      </ul>
+      <p>Untuk menggunakan hak ini, hubungi kami di <a href="tel:+60108666700">010-866 6700</a> atau melalui WhatsApp. Kami mungkin meminta anda mengesahkan identiti anda terlebih dahulu, supaya kami tidak memberikan maklumat pesanan anda kepada orang lain. Kami akan berusaha menjawab permintaan anda dalam tempoh yang munasabah.</p>
+      <div class="note">
+        <p>Perhatian: jika anda meminta kami memadamkan semua rekod pesanan, kami <strong>tidak lagi dapat</strong> mengesahkan pesanan lampau, memproses pemulangan, atau menjawab pertanyaan tentang pembelian sebelum ini.</p>
+      </div>
+
+      <h2>10. Kanak-Kanak</h2>
+      <p>Laman dan produk kami ditujukan untuk orang dewasa. Kami tidak mengumpul data peribadi kanak-kanak di bawah 18 tahun dengan sengaja. Jika anda seorang ibu bapa atau penjaga dan mendapati anak anda telah memberikan maklumat kepada kami, hubungi kami dan kami akan memadamkannya.</p>
+
+      <h2>11. Testimoni dan Gambar Pelanggan</h2>
+      <p>Jika anda berkongsi pengalaman anda dan bersetuju ia dipaparkan di laman ini atau di media sosial kami, kami mungkin menyiarkan nama pertama, lokasi umum dan gambar yang anda berikan. Ia hanya dilakukan dengan kebenaran anda. Anda boleh menarik balik kebenaran ini pada bila-bila masa dengan menghubungi kami, dan kami akan mengeluarkannya.</p>
+      <p>Produk kami ialah minuman herba tradisional, bukan produk perubatan. Testimoni ialah pengalaman peribadi pelanggan dan bukan janji hasil.</p>
+
+      <h2>12. Pautan ke Platform Lain</h2>
+      <p>Laman ini mengandungi pautan ke WhatsApp, Facebook, Instagram, Threads dan TikTok. Kami tidak mengawal laman tersebut dan tidak bertanggungjawab atas amalan privasi mereka. Sila baca dasar privasi platform berkenaan sebelum menggunakannya.</p>
+
+      <h2>13. Perubahan kepada Dasar Ini</h2>
+      <p>Kami boleh mengemas kini dasar ini dari semasa ke semasa supaya ia kekal tepat dan selaras dengan undang-undang. Versi terkini akan sentiasa dipaparkan di halaman ini dengan tarikh kemas kini di atas. Kami akan menggunakannya hanya untuk data peribadi yang dikumpul selepas perubahan dibuat.</p>
+
+      <h2>14. Hubungi Kami</h2>
+      <p>Untuk sebarang pertanyaan, permintaan akses, pembetulan atau pemadaman data, hubungi kami:</p>
+      <ul>
+        <li>WhatsApp / telefon: <a href="tel:+60108666700">010-866 6700</a></li>
+        <li>WhatsApp: <a href="https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20ada%20soalan%20pasal%20privasi%20data%20Jamulisa" target="_blank">mula berbual</a></li>
+        <li>Lokasi: Kota Warisan, Sepang, Selangor</li>
+      </ul>
+
+      <h2>15. Bahasa</h2>
+      <p>Dasar ini diterbitkan dalam Bahasa Malaysia. Jika ia diterjemahkan ke bahasa lain untuk kemudahan, versi Bahasa Malaysia yang menjadi rujukan utama.</p>
+
+      <p style="margin-top:28px">Lihat juga: <a href="/terms-of-service">Terma Perkhidmatan</a> &nbsp;·&nbsp; <a href="/">Kembali ke laman utama</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Ada <em>Soalan?</em></h2>
+    <p>Terus tanya Lisa — lebih cepat daripada menunggu.</p>
+    <a href="https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20ada%20soalan%20pasal%20privasi%20data%20Jamulisa" class="btn btn-whatsapp" target="_blank">&#128172; WhatsApp Lisa Sekarang</a>
+    <a href="tel:+60108666700" class="cta-phone">&#128222; 010-866 6700</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>
+      <a href="/" class="logo" style="font-size:1.4rem;margin-bottom:12px;display:inline-block">jamu<span>lisa</span></a>
+      <p>Jamu Kunyit Asam Sirih Manjakani — Resepi Asli Indonesia. Homemade, Tiada Pengawet.</p>
+      <p style="margin-top:8px">&#128205; Kota Warisan, Sepang</p>
+    </div>
+    <div>
+      <h5>Navigasi</h5>
+      <a href="/">Home</a><br>
+      <a href="/testimoni.html">Testimoni</a><br>
+      <a href="/#pricing">Harga</a><br>
+      <a href="/#faq">FAQ</a><br>
+      <a href="/terms-of-service">Terma Perkhidmatan</a><br>
+      <a href="/privacy-policy">Dasar Privasi</a>
+    </div>
+    <div>
+      <h5>Hubungi</h5>
+      <a href="https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa!%20%28dari%20laman%20privasi%29" target="_blank">WhatsApp</a><br>
+      <a href="tel:+60108666700">&#128222; 010-866 6700</a><br>
+      <p>COD: Kota Warisan, Dengkil, Cyberjaya</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p style="font-size:.78rem;color:rgba(255,255,255,.45);max-width:760px;margin:0 auto 10px;line-height:1.6">Jamu Lisa ialah minuman herba tradisional, bukan produk perubatan. Ia tidak bertujuan untuk mendiagnosis, merawat, menyembuhkan atau mencegah sebarang penyakit. Kesan pada setiap individu berbeza.</p>
+    &copy; 2026 Jamulisa. All rights reserved.
+  </div>
+</footer>
+
+<a href="https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20ada%20soalan%20pasal%20privasi%20data%20Jamulisa" class="floating-wa" target="_blank" aria-label="WhatsApp">&#128172;</a>
+
+</body>
+</html>
