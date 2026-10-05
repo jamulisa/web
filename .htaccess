@@ -19,10 +19,10 @@ Options -Indexes
 # mod_alias (Redirect), not mod_rewrite: RewriteRule parses '%2' in the
 # substitution as a backreference and silently eats the encoding (%20 -> 0).
 <IfModule mod_alias.c>
-Redirect 302 /fb https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Facebook%29
-Redirect 302 /ig https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Instagram%29
-Redirect 302 /th https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Threads%29
-Redirect 302 /status https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20WhatsApp%20Status%29
+Redirect 302 /fb https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Facebook%29
+Redirect 302 /ig https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Instagram%29
+Redirect 302 /th https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Threads%29
+Redirect 302 /status https://wa.me/60108666700?text=Hi%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20WhatsApp%20Status%29
 </IfModule>
 
 <IfModule mod_rewrite.c>
