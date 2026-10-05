@@ -12,9 +12,23 @@ DirectoryIndex index.html
 # Stop exposing the image/asset directories as browsable listings.
 Options -Indexes
 
+
+# --- Attribution short links: social channel -> WhatsApp, with a source tag ---
+# Put one of these short URLs in a post or bio instead of the raw phone number;
+# the pre-filled message tells Lisa which channel the customer came from.
+# mod_alias (Redirect), not mod_rewrite: RewriteRule parses '%2' in the
+# substitution as a backreference and silently eats the encoding (%20 -> 0).
+<IfModule mod_alias.c>
+Redirect 302 /fb https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Facebook%29
+Redirect 302 /ig https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Instagram%29
+Redirect 302 /th https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20Threads%29
+Redirect 302 /status https://wa.me/60108666700?text=Assalamualaikum%20Lisa%2C%20saya%20nak%20order%20Jamu%20Lisa%21%20%28dari%20WhatsApp%20Status%29
+</IfModule>
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
 
 # --- Legacy WordPress permalinks -> static equivalents (301, permanent) ---
 RewriteRule ^testimoni/?$      /testimoni.html      [R=301,L]
