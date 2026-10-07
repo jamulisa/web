@@ -16,6 +16,9 @@ $CHANNELS = [
     'tt'     => 'TikTok',
     'yt'     => 'YouTube',
     'gbp'    => 'Google',
+    'pin'    => 'Pinterest',
+    'grp'    => 'Facebook Group',
+    'shop'   => 'Marketplace',
     'web'    => 'Laman Web',
 ];
 

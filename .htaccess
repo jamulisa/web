@@ -34,6 +34,9 @@ RewriteRule ^status/?$  /go.php?c=status [L]
 RewriteRule ^tt/?$      /go.php?c=tt     [L]
 RewriteRule ^yt/?$      /go.php?c=yt     [L]
 RewriteRule ^gbp/?$     /go.php?c=gbp    [L]
+RewriteRule ^pin/?$     /go.php?c=pin    [L]
+RewriteRule ^grp/?$     /go.php?c=grp    [L]
+RewriteRule ^shop/?$    /go.php?c=shop   [L]
 
 # --- Canonical legal URLs: serve at /terms-of-service and /privacy-policy ---
 # Internal rewrite (no R flag) so the URL reviewers/platforms are given is the
